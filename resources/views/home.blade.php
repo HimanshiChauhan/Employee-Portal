@@ -24,7 +24,7 @@
                             <label for="job_title" class="col-md-4 col-form-label text-md-right">{{ __('Job Title') }}</label>
 
                             <div class="col-md-6">
-                                <input id="name" type="text" class="form-control{{ $errors->has('job_title') ? ' is-invalid' : '' }}" name="job_title" value="{{ old('job_title') }}" required autofocus>
+                                <input id="name" name="title" type="text" class="form-control{{ $errors->has('job_title') ? ' is-invalid' : '' }}" name="job_title" value="{{ old('job_title') }}" required autofocus>
 
                                 @if ($errors->has('job_title'))
                                     <span class="invalid-feedback" role="alert">
@@ -38,7 +38,7 @@
                             <label for="job_excerpt" class="col-md-4 col-form-label text-md-right">{{ __('Job Excerpt') }}</label>
 
                             <div class="col-md-6">
-                            <textarea class="form-control{{ $errors->has('job_excerpt') ? ' is-invalid' : '' }}" rows="2" id="comment"></textarea>
+                            <textarea name="excerpt" class="form-control{{ $errors->has('job_excerpt') ? ' is-invalid' : '' }}" rows="2" id="comment"></textarea>
 
                                 @if ($errors->has('job_excerpt'))
                                     <span class="invalid-feedback" role="alert">
@@ -52,7 +52,7 @@
                             <label for="job_location" class="col-md-4 col-form-label text-md-right">{{ __('Job Location') }}</label>
 
                             <div class="col-md-6">
-                                <input id="password" type="text" class="form-control{{ $errors->has('job_location') ? ' is-invalid' : '' }}" name="job_location" required>
+                                <input id="password" name="location" type="text" class="form-control{{ $errors->has('job_location') ? ' is-invalid' : '' }}" name="job_location" required>
 
                                 @if ($errors->has('job_location'))
                                     <span class="invalid-feedback" role="alert">
@@ -66,7 +66,7 @@
                             <label for="category" class="col-md-4 col-form-label text-md-right">{{ __('Category') }}</label>
 
                             <div class="col-md-6">
-                            <select class="form-control" id="sel1">
+                            <select class="form-control" name="category" id="sel1">
                                 <option>Design</option>
                                 <option>Engineering</option>
                                 <option>Marketing</option>
@@ -79,14 +79,14 @@
                             <label for="description" class="col-md-4 col-form-label text-md-right">{{ __('Job Description') }}</label>
 
                             <div class="col-md-6">
-                            <textarea class="form-control" rows="5" id="comment"></textarea>
+                            <textarea class="form-control" name="description" rows="5" id="comment"></textarea>
                             </div>
                         </div>
 
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
                                 <button type="submit" class="btn btn-primary">
-                                    {{ __('Create') }}
+                                    {{ __('Add') }}
                                 </button>
                             </div>
                         </div>
