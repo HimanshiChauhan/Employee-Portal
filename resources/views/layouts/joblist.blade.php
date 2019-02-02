@@ -38,6 +38,11 @@
 
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
+                             @if (Route::has('job'))
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('job') }}">{{ __('Add New') }}</a>
+                                </li>
+                            @endif
                         <!-- Authentication Links -->
                         @guest
                             <li class="nav-item">

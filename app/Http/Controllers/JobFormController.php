@@ -7,7 +7,12 @@ use App\Jobs;
 
 class JobFormController extends Controller
 {
-    public function show()
+    // public function __construct()
+    // {
+    //     $this->middleware('auth');
+    // }
+
+    public function display()
     {
         $jobs = new Jobs;
         
@@ -29,10 +34,41 @@ class JobFormController extends Controller
         return view('home');
     }
 
-    // public function avail()
-    // {
-    //     $job = Jobs::all();
+    public function avail()
+    {
+        $job = Jobs::all();
 
-    //     return view('job',compact('job'));
-    // }
+        return view('job',compact('job'));
+    }
+
+    public function index()
+    {
+        return Jobs::all();
+    }
+
+    public function show(Jobs $job)
+    {
+        return $job;
+    }
+
+    public function store(Request $request)
+    {
+        $job = Jobs::create($request->all());
+
+        return response()->json($job, 201);
+    }
+
+    public function update(Request $request, Jobs $job)
+    {
+        $job->update($request->all());
+
+        return response()->json($job, 200);
+    }
+
+    public function delete(Jobs $job)
+    {
+        $job->delete();
+
+        return response()->json(null, 204);
+    }
 }

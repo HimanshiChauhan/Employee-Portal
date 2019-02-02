@@ -19,8 +19,8 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::post('/job', ['as' => 'job-form', 'uses' => 'JobFormController@show']);
+Route::post('/job', ['as' => 'job-form', 'uses' => 'JobFormController@display'])->middleware('auth');
 
-Route::get('/job',['as' => 'job', 'uses' => 'JobFormController@home']);
+Route::get('/job',['as' => 'job', 'uses' => 'JobFormController@home'])->middleware('auth');
 
-// Route::get('/job', ['as' => 'avail-jobs', 'uses' => 'JobFormController@avail'])->name('avail-jobs');
+Route::get('/avail-jobs', ['as' => 'avail-jobs', 'uses' => 'JobFormController@avail'])->middleware('auth');

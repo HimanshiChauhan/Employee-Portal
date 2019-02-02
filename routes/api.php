@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Http\Request;
+Use App\Job;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,3 +17,9 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::get('jobs', 'JobFormController@index');
+Route::get('jobs/{job}', 'JobFormController@show');
+Route::post('jobs', 'JobFormController@store');
+Route::put('jobs/{job}', 'JobFormController@update');
+Route::delete('jobs/{job}', 'JobFormController@delete');
