@@ -33,7 +33,16 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
-
+                            @if (Route::has('job'))
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('job') }}">{{ __('Add Job') }}</a>
+                                </li>
+                            @endif
+                            <!-- @if (Route::has('avail-jobs'))
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('avail-jobs') }}">{{ __('Available Jobs') }}</a>
+                                </li>
+                            @endif -->
                     </ul>
 
                     <!-- Right Side Of Navbar -->
