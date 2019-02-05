@@ -9,7 +9,7 @@ class JobFormController extends Controller
 {
     public function show()
     {
-        $jobs = new Jobs;
+        $jobs = new Job;
         
         $jobs->title = request('title');
         $jobs->excerpt = request('excerpt');
@@ -19,7 +19,7 @@ class JobFormController extends Controller
 
         $jobs->save();
 
-        $job = Jobs::all();
+        $job = Job::all();
 
         return view('job',compact('job'));
     }
@@ -31,7 +31,7 @@ class JobFormController extends Controller
 
     // public function avail()
     // {
-    //     $job = Jobs::all();
+    //     $job = Job::all();
 
     //     return view('job',compact('job'));
     // }
