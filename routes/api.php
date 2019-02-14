@@ -20,6 +20,5 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 Route::get('jobs', 'JobFormController@index');
 Route::get('jobs/{job}', 'JobFormController@show');
-Route::post('jobs', 'JobFormController@store');
-Route::put('jobs/{job}', 'JobFormController@update');
-Route::delete('jobs/{job}', 'JobFormController@delete');
+
+Route::post('applicants', 'ApplicantController@store');
